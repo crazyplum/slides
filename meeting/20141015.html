@@ -74,41 +74,37 @@ class: center, middle
 
 ## Experiment
 
-* different from LJ40K: </br>
-sentences with emoticon </br>
+* Initial message pool: Facebook messages </br>
+Participants: 20 NS and 20 NNS </br>
 
-* full of special characters, unnecessary punctuation marks </br>
+* Use SentiWordNet to calculate lexicical sentiment
 
----
+* Both authors and participants rate the emotional valence and annotate emotional cues. </br>
+Gold standard is the rating and annotation from the authors.
 
-## Finished Progress
-  
-* store raw data into database 
-
-* tokenize sentences with CKIP tokenizer
-
-* use standford parser to get dependency relationship
-
-* extract patterns 
-
-* build lexicon
+* .red[PUT IMAGE!!!]
 
 ---
 
-## Progressing
+## Result
 
-* tfidf: for keyword identifying
-
-* svm
+* .green[✔] Hypothesis 1: Generally, NS will detect the emotional valence of a message more accurately than NNS.
 
 ---
-## Problems - Tokenization
 
-* Stanford parser performs bad on Chinese sentences tokenizing. </br>
-.orange[->] Use CKIP instead
+## Result
 
-* Some sentences with lots of punctuation mark cannot be tokenized. </br>
-Examples: .small-font[如果你需要時間好好冷靜的思考.......沒關係......我願意等你.......無論多久我都會等你........等你準備好了.........等你願意見我....... 我不會再讓你擔心.......我也會按時吃飯........也會好好照顧自己.......你說的我都答應你........真的.......我說的都是真的.........請你相信 我.......... 小黑豬不會和小白豬分開的......就算有........也只是短暫的]
+* Research Question 1: Does the lexical sentiment of a message affect the accuracy of detecting the emotional valence for NS and NNS? </br>
+.red[PUT IMAGE!!! Figure 1 & 2]
+
+---
+
+## Result
+
+* Research Question2 : Do NS and NNS make use of different types of cues(e.g., words, symbols, and emoticons) when detecting the emotional valence of text-only messages? If so, what type?
+
+---
+
 
 
 
