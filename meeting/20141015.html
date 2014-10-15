@@ -22,6 +22,9 @@
            font-size: 1.2em;
            margin-bottom: 0.5em;
       }
+      img{
+        width:100%;
+      }
 
       .red { color: #fa0000}
       .orange { color: #F59C25;}
@@ -40,14 +43,18 @@
       }
 
       .right-column li {
-        font-size: 1.2em;
-        line-height: 0.8em;
-
+        font-size: 0.8em;
+        line-height: 1.2em;
+        margin-bottom: 0.4em;
       }
       .left-column{
         width: 50%;
         float: left; 
       }
+      #img-adjust{
+        width:50%;
+      }
+      
 
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
     </style>
@@ -82,93 +89,73 @@ Participants: 20 NS and 20 NNS </br>
 * Both authors and participants rate the emotional valence and annotate emotional cues. </br>
 Gold standard is the rating and annotation from the authors.
 
-* .red[PUT IMAGE!!!]
+![alt text](img/1.png)
 
 ---
 
 ## Result
 
 * .green[✔] Hypothesis 1: Generally, NS will detect the emotional valence of a message more accurately than NNS.
-
----
-
-## Result
-
 * Research Question 1: Does the lexical sentiment of a message affect the accuracy of detecting the emotional valence for NS and NNS? </br>
-.red[PUT IMAGE!!! Figure 1 & 2]
 
----
-
-## Result
-
-* Research Question2 : Do NS and NNS make use of different types of cues(e.g., words, symbols, and emoticons) when detecting the emotional valence of text-only messages? If so, what type?
-
----
-
-
-
-
-
----
-
-## Problems - Pattern Extraction
-
-* Chinese grammar is quite different from English one. </br>
-
-  .orange[->] We need to find new pattern rule instead.
-
-
----
-
-## Problems - Pattern Extraction
-
-* Patterns we want to extract: </br>
-  我(sub) 很(adv) .green[開心(v)] </br>
-  我(sub) .green[是(v)] 白痴(n) </br> 
-  我(sub) .green[吃(v)] 了 一 隻 牛(obj) </br>
-
-
----
-
-## Problems - Pattern Extraction
-
-* Strange things happens: </br>
-  我(sub) .green[肚子(v)] 痛(obj) </br>
-  事(sub) .green[做(v)]
-
-* Patterns we do not want: </br>
-  後來 很(adv) .green[快(v)] </br>
-  估(adv) .green[耐(v)]
-
-
-
----
-
-## Problems - Pattern Extraction
-
-* CKIP tokenizer may not tokenize the sentence well
-
-* Stanford parser is not suitable for Chinese data
-
-* Need to find a new way to generate good patterns for Chinese
-
----
-
-## Problems - Feature Extraction
-.left-column[ ![alt text](img/feature_extract.png) ]
+.left-column[ ![alt text](img/2.png) ]
 .right-column[
-* difficult to find repeated patterns in one sentence, because sentence is too short
-
-* many patterns appear in only one emotion category </br>
-.orange[->] useless for training models
+* Both NS and NNS were most accurate at rating the emotional valence of messages with positive lexical sentiment, and least accurate at rating messages with negative lexical sentiment.  
+  
+* The participants’ language background and the lexical sentiment of a message had an effect on the 
+  participants’ accuracy of detecting the emotional valence of the text-only messages.
 ]
 
 ---
 
-## Problems
+## Result
 
-* Need to redefine "document" </br>
-.red[✘] treat sentence as document 
+* Research Question 2: Do NS and NNS make use of different types of cues(e.g., words, symbols, and emoticons) when detecting the emotional valence of text-only messages? If so, what type? </br>
+
+.left-column[ ![alt text](img/3.png) ]
+.right-column[
+* No any significant difference in the cue annotation accuracy between NS and NNS.  
+  
+* Cue annotation accuracy was significantly higher in messages with positive lexical sentiment compared to negative sentiment and objective sentiment.
+]
+
+
+
+---
+
+## Result (cont.)
+
+* NS chose exclamation marks and emoticons significantly more frequently than NNS, and they were more accurate in emotional valence rating for messages that included exvlamation marks or emoticons.
+* NNS were significantly less accurate at detecting the emotional valence when a message included exclamation marks or emoticons.
+
+ ![alt text](img/4.png) 
+
+
+
+---
+
+## Discussion
+
+* NNS can detect the important emotion words, but they may not understand the nuances of negative words when used as part of sarcastic and cynical messages.
+
+* Japanese speakes may not be familiar with the Western emoticons and their relation to the verbal content of a message. </br>
+
+
+---
+
+## Interesting Finding
+
+* The rating accuracy of participants were low. ( < 0.6) </br>
+.orange[->] Using machine learning technique with just simple keyword correlation methods, the results is 0.6 up. (Live Journal coupus) </br>
+
+---
+
+## Comments
+
+* Instead of SentiWordNet, maybe the authors could try [Hedonometer](http://hedonometer.org/index.html) to calculate the lexical sentiment of messages.   
+
+* They recruit human workers to annotate the happiness <-> sadness of 10000 words. </br>
+Using .orange[word shift] algorithm to measure happiness of text.
 
 ---
 class: center, middle
