@@ -75,131 +75,107 @@
     <textarea id="source">
 
 class: center, middle
-
-“Maybe It Was a Joke” - Emotion Detection in Text-Only Communication by Non-Native English Speakers
+Small Group Meeting - Progress Report
 ===============
 
-### Ari Hautasaari, Naomi Yamashita, Ge Gao ###
-#### 2014.10.16 ####
+#### 2014.11.12 ####
+
+---
+## Papers I have read
+* Human language reveals a universal positivity bias (the Hedenometer project)
+* Vader: A parsimonious rule-based model for sentiment analysis of social media text (ICWSM 2014)
+* MicroMandarin: Mobile Language Learning in Context (CHI 2011)
+
+---
+class: center, middle
+    
+MicroMandarin: Mobile Language Learning in Context
+============
+
+### Darren Edge, Elly Searle, Kevin Chiu, Jing Zhao, James A.Landay ###
+
+
 
 ---
 
 ## Main Idea
 
-* The .pink[different emotional valence] detected by Native English speakers (NS) and Japanese non-native English speakers (NNS) in .pink[text-only messages].
-* NNS are .pink[significantly less accurate] at detecting the emotional valence of messages, especially when the messages include highly .pink[negative words].
+* Agrue for the value of .pink[contextual microlearning] in the many breaks spread accross different places and throughout the day. 
+* Modal of context is based on .pink[location].
+* Based on three findings from Congitive Psychology: .pink[encoding specificity], .pink[spaced repetition], .pink[situated coginiton].
+* Use .pink[flashcard] as a language learning tool.
 
 ---
 
-## Experiment
+## Pilot Study
 
-* Initial message pool: Facebook messages </br>
-Participants: 20 NS and 20 NNS </br>
-* Use SentiWordNet to calculate lexicical sentiment </br>
-.tab[
-⇒ divided messages into three types: positive, negative and objective]
-* Both authors and participants rate the emotional valence and annotate emotional cues. </br>
-Gold standard is the rating and annotation from the authors.
-
-![alt text](img/1.png)
-
----
-
-## Result
-
-* .green[✔] Hypothesis 1: Generally, NS will detect the emotional valence of a message more accurately than NNS.
-* Research Question 1: Does the lexical sentiment of a message affect the accuracy of detecting the emotional valence for NS and NNS? </br>
-
-.left-column[ ![alt text](img/2.png) ]
-.right-column[
-* Both NS and NNS were most accurate at rating the emotional valence of messages with positive lexical sentiment, and least accurate at rating messages with negative lexical sentiment.  
-  
-
-* The participants’ language background and the lexical sentiment of a message had an effect on the 
-  participants’ accuracy of detecting the emotional valence of the text-only messages.
-]
-
----
-
-## Result
-
-* Research Question 2: Do NS and NNS make use of different types of cues(e.g., words, symbols, and emoticons) when detecting the emotional valence of text-only messages? If so, what type? </br>
-
-.left-column[ ![alt text](img/3.png) ]
-.right-column[
-* No any significant difference in the cue annotation accuracy between NS and NNS.  
-  
-* Cue annotation accuracy was significantly higher in messages with positive lexical sentiment compared to negative sentiment and objective sentiment.
-]
-
+* Conduct a wev survey of English and Chinese native speakers, learning Chinese and Englis respectively, in both the U.S.(Seattle) and China (Beijing).
+* Main finding: satisfication was not based on the language or location of learning, but rather the need of learner to use the language to .pink[achieve the goal].
 
 
 ---
 
-## Result (cont.)
+## Second Language Acquisition (SLA) Theory
 
-* NS chose exclamation marks and emoticons significantly more frequently than NNS, and they were more accurate in emotional valence rating for messages that included exvlamation marks or emoticons.
-* NNS were significantly less accurate at detecting the emotional valence when a message included exclamation marks or emoticons.
+* The .pink[useage-based model] of SLA is based on the premise that "language is learned from participatory experience of processing input and producing language during interaction in social contexts where individually-desired non-linguistic outcomes are goals to be achieved."
+* Five-stage model of SLA: </br>
+apperceived input (noticed) -> intake (hypothesis formation) -> integration (grammar formation) -> output (speech)
+* The two input stage are strongly affected by the .pink[learner's executive motivation].
 
+---
 
+## Design
+
+* Try to help study-directed learners to adopt a use-directed attitude towards learning.
 .img-adjust[
-![alt text](img/4.png) 
+![alt text](img/6.png) 
 ]
 
----
-
-## Discussion
-
-* NNS can detect the important emotion words, but they may not understand the nuances of negative words when used as part of sarcastic and cynical messages.
-* Japanese speakes may not be familiar with the Western emoticons and their relation to the verbal content of a message. </br>
 
 
 ---
 
-## Interesting Finding
+## Evaluation
 
-* The rating accuracy of participants were low. ( < 0.6) </br>
-.tab[
-⇒ Using machine learning technique with just simple keyword correlation methods, the results is 0.6 up. (Live Journal coupus) ]
-* The emotional valence differences between authors and readers.
-.tab[
-⇒ While using supervised machine learning, the training model learned the answers from readers.
-]
+* Within-subject study design comparing two application version: contextual and frequency version.
+* Six hypothesess target possible differences between two versions: </br>
+language novelty (H1), session frequency (H2), session length (H3), session locations (H4), flashcards seen (H5), flashcard learned (H6)
+* Use the Expereience Sampling Method (ESM) to track real-world speaking and appplication use.
+* The participants need to do an online Web survey 4 times a day.
 
 ---
 
+## Results and Discussion
+
+* Evidence of speaking difficulties, context dectection accuracy.
+* .green[✔] Hypothesis 1 significant: contextual version could show more flashcards. </br>
+The fequency version wasting time with language already know, the contextual version wasting tmie showing cards too difficult. </br>
+.orange[⇒] Learner modeling may resolve the problems.
+
+---
+## Results and Discussion (Cont.)
+* .green[✔] Hypothesis 3 & 4 significant: the usage pattern differs </br>
+the contextual version results in behavior that closely resembled episodes of microlearning constrained by time demands and motivated by concrete needs.
+* .green[✔] Hypothesis 5 & 6 significant: frequency version resulted in more cards being both seen and learned.</br>
+.orange[⇒] studying was substantial in both versions, even "cramming" could lead to learn a flashcard.
+
+---
+## Future work
+* Need to understand the implications of contextual microlearning on language competence, performance, motivation and affect.
+* Combining frequency and contextual approaches would help to promote a 'micro' approach to language learning.
+
+
+---
 ## Comments
 
-* This paper suggests that there should be a system for classifying the lexical sentiment in emotion words based on non-native speakers' ratings.
-.tab[
-⇒ Maybe [Hedonometer](http://hedonometer.org/index.html) would be a good source to calculate the lexical sentiment of messages. ]
-.tab[
-⇒ They also have the different perceived happiness rating for 10 languages.]
-.tab[It's interesting to see that how people with different native languages feels different towards words with same semantic meaning. </br>
-[Graph](http://www.uvm.edu/~storylab/share/papers/dodds2014a/translations.html?x=English&y=Chinese)
-]
+* learning games: achivements unlocked </br>
+.orange[⇒] 迷霧世界, make user want to unlock all the flashcard, and remember all of them.
+* contexutal use: add translation function which can let user enter what vocabs they want to use in certain situation.
+.orange[⇒] we could also collect words, phrases and sentences that could be used in certain situation. 
 
 
 ---
 
-## Topics that I'm Intertested in...
-
-* Using NLP methods to analyize people's behavior on social media or CMC
-.tab[
-⇒ perception differences, cultural semantic use differences, the languistics characteristic of speech community
-]
-.tab[
-⇒ Hedonometer seems provida a good way to quantitate "mood"
-]
-* Second language learning tool
-.tab[
-⇒ Vivid :D
-]
-
-
-
-
----
 class: center, middle
 
 Questions or Comments :)
