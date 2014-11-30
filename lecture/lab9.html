@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(http://fonts.googleapis.com/css?family=Inconsolata>);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+      }
+      .remark-slide-content h1 { font-size: 3.5em; }
+      .remark-slide-content h2 { font-size: 2.0em; }
+      h3 { font-size: 1.6em; }
+      
+      li p { line-height : 1.5em; }
+      li { line-height: 1.5em;
+           font-size: 1.0em;
+      }
+
+      .red { color: #fa0000}
+      .orange { color: #F59C25;}
+      .green { color: rgb(55, 126, 39);}
+      .blue {color: #257FF5;}
+      .pink {color: rgb(244, 10, 97);}
+
+      .small-font{
+        font-size: 0.6em;
+        line-height: 0.4em;
+      }
+
+      .right-column{
+        width: 50%;
+        float: right;
+        
+      }
+
+      .right-column li {
+        font-size: 1.2em;
+        line-height: 0.8em;
+
+      }
+      .left-column{
+        width: 50%;
+        float: left; 
+      }
+
+      img {
+        display: block;
+        margin-top: 3em;
+        margin-right: auto;
+        margin-left: auto;
+        width:80%;
+      }
+
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #F4F4F4;
+        border-radius: 5px;
+      }
+
+      .footnote{
+        position: absolute;
+        bottom: 1em;
+        color: black;
+        font-size: 0.6em;
+      }
+
+      #.remark-code, .remark-inline-code { font-family: 'Inconsolata'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+Lab 9 - git and version control
+======================
+
+---
+
+## Setting Up Git (Windows environment)
+* Download and install Git<br>
+http://git-scm.com/downloads
+
+---
+## Setting Up Git (cont.)
+
+![Alt text](img/git_0.png)
+
+---
+
+## Setting Up Git (cont.)
+
+![Alt text](img/git_1.png)
+
+---
+
+## Setting Up Git (cont.)
+
+![Alt text](img/git_2.png)
+
+---
+
+## Setting Up Git (cont.)
+
+![Alt text](img/git_3.png)
+
+---
+
+## Setting Up Git (cont.)
+
+![Alt text](img/git_4.png)
+
+---
+
+## Setting Up Git (cont.)
+
+![Alt text](img/git_5.png)
+
+---
+## Configure the setting
+
+* Your Identity
+```
+$ git config --global user.name "your name"
+$ git config --global user.email "your email"
+```
+
+* Check your settings
+```
+$ git config --list
+```
+
+---
+
+## Getting Started - Git Basics
+
+![Alt text](img/areas.png)
+
+* Working directories is a single .pink[checkout] of one version of the project. <br>
+ These files are .pink[pulled] out of the compressed database in the Git directory and placed on disk for you to use or modify.
+
+.footnote[http://git-scm.com/book/en/v2/Getting-Started-Git-Basics#The-Three-States]
+---
+
+## Getting a Git Repositoy
+
+* Create your own project
+```
+$ mkdir project_folder
+$ dir project_folder
+$ git init
+```
+
+* Clone a project from other's repository
+```
+$ git clone https://github.com/user/repo
+# via https
+$ git clone git@github.com:user/repo.git
+# via ssh
+```
+
+.footnote[http://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository]
+
+---
+## Three useful commands - git status
+
+* show current working tree status
+* you can see which .pink[branch] you are on and the file status
+* after `git init`
+```
+$ git status
+On branch master
+nothing to commit, working directory clean
+```
+
+
+
+
+
+
+
+    </textarea>
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+          highlightStyle: 'arta',
+          highlightLanguage: 'bash'
+        });
+    </script>
+  </body>
+</html>

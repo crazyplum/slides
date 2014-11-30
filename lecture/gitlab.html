@@ -20,13 +20,14 @@
       
       li p { line-height : 1.5em; }
       li { line-height: 1.5em;
-           font-size: 1.5em;
+           font-size: 1.0em;
       }
 
       .red { color: #fa0000}
-      .orange { color: rgb(218, 134, 6);}
+      .orange { color: #F59C25;}
       .green { color: rgb(55, 126, 39);}
-      .blue {color: rgb(39, 86, 151);}
+      .blue {color: #257FF5;}
+      .pink {color: rgb(244, 10, 97);}
 
       .small-font{
         font-size: 0.6em;
@@ -42,18 +43,52 @@
       .right-column li {
         font-size: 1.2em;
         line-height: 0.8em;
-
+        width:50%;
       }
       .left-column{
         width: 50%;
-        float: left; 
+        float: left;
+
       }
 
       img {
+        width: 100%;
+        
+      }
+      .img-60{
         display: block;
-        margin-top: 3em;
+        margin-top: 1em;
         margin-right: auto;
         margin-left: auto;
+        width: 60%;
+      }
+      .img-70{
+        display: block;
+        margin-top: 1em;
+        margin-right: auto;
+        margin-left: auto;
+        width: 70%;
+      }
+      .img-80{
+        display: block;
+        margin-top: 1em;
+        margin-right: auto;
+        margin-left: auto;
+        width: 80%;
+      }
+
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #F4F4F4;
+        border-radius: 5px;
+      }
+
+      .footnote{
+        position: absolute;
+        bottom: 1em;
+        color: black;
+        font-size: 0.6em;
       }
 
       #.remark-code, .remark-inline-code { font-family: 'Inconsolata'; }
@@ -76,46 +111,299 @@ http://git-scm.com/downloads
 ---
 ## Setting Up Git (cont.)
 
+.img-80[
 ![Alt text](img/git_0.png)
+]
 
 ---
 
 ## Setting Up Git (cont.)
 
+.img-80[
 ![Alt text](img/git_1.png)
+]
+
 
 ---
 
 ## Setting Up Git (cont.)
 
+.img-80[
 ![Alt text](img/git_2.png)
+]
+
 
 ---
 
 ## Setting Up Git (cont.)
 
+.img-80[
 ![Alt text](img/git_3.png)
+]
+
 
 ---
 
 ## Setting Up Git (cont.)
 
+.img-80[
 ![Alt text](img/git_4.png)
+]
+
 
 ---
 
 ## Setting Up Git (cont.)
 
+.img-80[
 ![Alt text](img/git_5.png)
+]
+
 
 ---
+## Configure the setting
+
+* Your Identity
+```
+$ git config --global user.name "your name"
+$ git config --global user.email "your email"
+```
+
+* Check your settings
+```
+$ git config --list
+```
+
+---
+
+## Getting Started
+
+.img-70[
+![Alt text](img/areas.png)
+]
+
+* Working directories is a single .pink[checkout] of one version of the project. <br>
+ These files are .pink[pulled] out of the compressed database in the Git directory and placed on disk for you to use or modify.
+
+.footnote[http://git-scm.com/book/en/v2/Getting-Started-Git-Basics#The-Three-States]
+---
+
+## Getting a Git Repositoy
+
+* Create your own project
+```
+$ mkdir project_folder
+$ dir project_folder
+$ git init
+Initialized empty Git repository in C:/Users/crazyplum/test/.git/
+```
+
+* Clone a project from other's repository
+```
+$ git clone https://github.com/user/repo
+# via https
+$ git clone git@github.com:user/repo.git
+# via ssh
+```
+
+.footnote[http://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository]
+
+---
+## Recording Changes - the Lifecycle
+
+![alt text](img/lifecycle.png)
+
+.footnote[http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository]
+---
+
+## Recording Changes - git status
+
+* show current working tree status
+* you can see which .pink[branch] you are on and the file status
+* after `git init`
+```
+$ git status
+On branch master
+Initial commit
+nothing to commit (create/copy files and use "git add" to track)
+```
+
+---
+## Recording Changes - git status (cont.)
+
+* create a text file `test.txt`
+```
+  $ git status
+  On branch master
+  Initial commit
+  Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+
+          test.txt 
+
+  nothing added to commit but untracked files present (use "git add" to track)
+```
+* You need to tell `git` that you add a file, so that it could keep a snapshot of it.
+
+---
+## Track the files - git add
+
+* Track a new file
+```
+$ git add test.txt
+  Initial commit
+
+  Changes to be committed:
+    (use "git rm --cached <file>..." to unstage)
+
+          new file:   test.txt
+```
+* Track all the files in the directory
+```
+$ git add .
+```
+
+---
+## Commiting Changes - git commit
+This command would open `$EDITOR`, and is rarely used.
+```
+$ git commit
+```
+Mostly, we would use
+```
+  $ git commit -m "add test file"
+  [master (root-commit) c51630e] add test file
+  1 file changed, 0 insertions(+), 0 deletions(-)
+  create mode 100644 test.txt
+```
+or
+```
+  git commit -a -m 'add more files'
+```
+when there're many modified tracked files. (.pink[Use this command the most!!])
+
+---
+## Commiting Changes - git commit (cont.)
+
+If you want to modify your commit message,
+```
+$ git commit --amend
+```
+this command would open `$EDITOR`
+
+.img-80[
+![Alt text](img/git_6.png)
+]
+
+---
+## Removing Files - git rm
+* To remove the file from the working directory, you would need to remove it from tracked files as well. 
+```
+  $ git rm test.txt
+  rm 'test.txt'
+  $ git status
+  On branch master
+  Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    test.txt
+```
+* To remove the file from tracked file, but leave the file in the working directory
+```
+  $ git rm --cached <filename>
+```
+
+---
+## See what you've committed - git log
+```
+$ git log
+  commit 52fefdceca43f0b834f84aaeee2aa57e2586ab3f
+  Author: crazyplum <crazyplum24@gmail.com>
+  Date:   Mon Dec 1 01:26:31 2014 +0800
+
+      delete test.file
+
+  commit c289ae5a33e07b6299209a34fb6c54b31635d9c1
+  Author: crazyplum <crazyplum24@gmail.com>
+  Date:   Mon Dec 1 01:05:13 2014 +0800
+
+      add test file
+
+```
+---
+## How to write commit message?
+* keep your modifications .pink[small] and .pink[clear] between commits
+* you can use `git diff` to double check the staging areas before you commit.
+* a brief summary at the first line, then your implementation (what, how and why  )
+* you can checkout some open source repostiory to see how others write their messages.
+
+---
+## Branch
+* A branch in Git is simply a lightweight movable pointer to one of these commits. It would keep multiple snapshots of one repostiory.
+* As you initially make commits, you're given a `master` branch that points to the last commit you made. <br>
+Every time you commit, it moves forward automatically.
+
+.img-80[
+![Alt text](img/branch_0.png)
+]
+
+
+.footnote[http://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is]
+---
+## Create a New Branch - git branch
+Create a new branch.
+```
+$ git branch testing
+```
+
+.img-80[
+![Alt text](img/branch_1.png)
+]
+
+---
+## Switch to an existing branch - git checkout
+* Git use a special pointer `HEAD` to know what branch you're currently on.
+```
+$ git checkout testing
+```
+.img-70[
+![Alt text](img/branch_2.png)
+]
+
+---
+## Illustration
+```
+$ vim test.txt
+$ git commit -a -m "make a change"
+```
+.img-80[
+![Alt text](img/branch_3.png)
+]
+---
+## Illustration (cont.)
+```
+$ git checkout master
+$ vim test.txt
+$ git commit -a -m "make another change"
+```
+.img-70[
+![Alt text](img/branch_4.png)
+]
+---
+
+
+
+
 
 
     </textarea>
     <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
     </script>
     <script type="text/javascript">
-      var slideshow = remark.create();
+      var slideshow = remark.create({
+          highlightStyle: 'arta',
+          highlightLanguage: 'bash'
+        });
     </script>
   </body>
 </html>
