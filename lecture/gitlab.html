@@ -330,6 +330,8 @@ $ git log
       add test file
 
 ```
+`git log -p` shows the diff introduced in each commit <br>
+`git log --graph` would illustrate whole network flow.
 ---
 ## How to write commit message?
 * keep your modifications .pink[small] and .pink[clear] between commits
@@ -390,10 +392,76 @@ $ git commit -a -m "make another change"
 ![Alt text](img/branch_4.png)
 ]
 ---
+## git branch
+* list (local) branches
+```
+ $ git branch
+ * master
+ testing
+```
+* create a new branch
+```
+  $ git branch <branchname>
+```
+* delete a branch
+```
+  $ git branch -d <branchname>
+```
+---
+## git checkout
+* restore any snapshots
+* switch between branches
+```
+$ git checkout <branchname>
+```
+* create and checkout to a new branch
+```
+$ git checkout -b <branchname>
+Switched to a new branch <branchname>
+```
+* checkout to a particular snapshoot
+```
+$ git checkout 52fefdc
+```
+---
+## Discard the changes
+* If you haven't publish any of local commit to remote.
+```
+$ git reset --hard 52fefdc
+# the particular snapshot which you want to go back
+```
+* If you have published the commits
+```
+$ git revert 52fefdc
+```
+`revert` would .pink[create commit] which reverse all the changes.
 
+---
+## Discard the changes - with using ~ and ^
+* `ref~` means the commit's first parent.<br>
+`ref~2` means the commit's first parent's first parent.
+* `ref^` means the commit's first paresnt.<br>
+`ref^2` means the commit's **second parent**.
 
+.img-70[
+![Alt text](img/git-graph.svg)
+]
 
+.footnote[http://www.paulboxley.com/blog/2011/06/git-caret-and-tilde]
+---
+## git merge
+* merge a branch into your current branch (`HEAD`)
+```
+$ git merge <some branch>
+......
+x files changed, y insertions(+), z deletions(-)
+```
+* conflict!
+  - different commits modifying on the same parts of code
+  - fix it, then `add` and `commit`
 
+---
+## Working with Remote
 
 
     </textarea>
