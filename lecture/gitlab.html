@@ -99,7 +99,7 @@
 
 class: center, middle
 
-Lab 9 - git and version control
+Lab 8 - git and version control
 ======================
 
 ---
@@ -536,6 +536,7 @@ $ git fetch [remote-name]
 ```
 $ git push [remote-name] [branch-name]
 ```
+You can choose which remote you want to upload to.
 ---
 ## Illustration
 ```
@@ -555,9 +556,33 @@ $ git fetch origin
 ]
 `git merge` and solve the conflict and then `git push` it back to remotes.
 ---
+## Illustration (cont.)
+Add another remote repository
+```
+$ git remote add teamone git://git.team1.ourcompany.com
+```
+.img-70[
+![alt text](img/remote-branches-4.png)
+]
 
+---
+##Useful Combos
+* create remote branch
+```
+$ git checkout -b [new-branch]
+$ git push -u [remote-name] [new-branch]
+```
+* checkout remote branch
+```
+$ git checkout [remote-name/branch-name] [branch-name] 
+```
+* throw away all local commits without leaving record
+```
+$ git reset --hard [remote-name/branch-name](or any pointer)
+```
+---
 
-
+---
 * https
 ```
 git config --global credential.helper wincred
