@@ -44,6 +44,7 @@
         font-size: 1.2em;
         line-height: 0.8em;
         width:50%;
+        float: right;
       }
       .left-column{
         width: 50%;
@@ -537,7 +538,9 @@ $ git fetch [remote-name]
 ```
 `git fetch` commands only pulls the data to local repo - it doesn't automatically merge it with any of your work or modify what you're currently working on. You need to .pink[merge] it manually.<br>
 `git pull` would do `git fetch` and `git merge` for you.
-
+```
+$ git pull [remote-name] [branch-name]
+```
 
 * Upload data
 ```
@@ -614,10 +617,18 @@ Be careful that you should `git push` code to your own remote repo.
 ## Practice (cont.)
 * One should finish `Square.java` and the other should finish `Circle.java`.<br>
 Merge your codes together and run to get result. 
-* Take a screenshot of the console result, and also take a screenshot from github network graph.<br>
-(https://github.com/username/repo-name/network)
+* Take a screenshot of the console result, and also take a screenshot from github commits log.<br>
+(https://github.com/username/repo-name/commits/master)
 * Upload your screenshots, code and the url of your remote repo to iLMS by 5:30PM today. (12/2)
-* Counted as participation
+* Counted as participation.
+
+.left-column[
+![alt text](img/screenshot_0.png)
+]
+.right-column[
+![alt text](img/screenshot_1.png)
+]
+
 
 ---
 ## More Convenient to Push on Windows. 
