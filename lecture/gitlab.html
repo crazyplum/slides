@@ -258,7 +258,7 @@ $ git add test.txt
 
           new file:   test.txt
 ```
-* Track all the files in the directory
+* Track all the files in the directory, and staged all changes.
 ```
 $ git add .
 ```
@@ -289,7 +289,7 @@ If you want to modify your commit message,
 ```
 $ git commit --amend
 ```
-this command would open `$EDITOR`
+this command would open `$EDITOR` (usually vim)
 
 .img-80[
 ![Alt text](img/git_6.png)
@@ -310,7 +310,7 @@ this command would open `$EDITOR`
 ```
 * To remove the file from tracked file, but leave the file in the working directory
 ```
-  $ git rm --cached <filename>
+  $ git rm --cached [filename]
 ```
 
 ---
@@ -401,25 +401,25 @@ $ git commit -a -m "make another change"
 ```
 * create a new branch
 ```
-  $ git branch <branchname>
+  $ git branch [branchname]
 ```
 * delete a branch
 ```
-  $ git branch -d <branchname>
+  $ git branch -d [branchname]
 ```
 ---
 ## git checkout
 * restore any snapshots
 * switch between branches
 ```
-$ git checkout <branchname>
+$ git checkout [branchname]
 ```
 * create and checkout to a new branch
 ```
-$ git checkout -b <branchname>
-Switched to a new branch <branchname>
+$ git checkout -b [branchname]
+Switched to a new branch [branchname]
 ```
-* checkout to a particular snapshoot
+* checkout to a particular snapshoot (using short SHA, at least 6 characters)
 ```
 $ git checkout 52fefdc
 ```
@@ -452,7 +452,7 @@ $ git revert 52fefdc
 ## git merge
 * merge a branch into your current branch (`HEAD`)
 ```
-$ git merge <some branch>
+$ git merge [some branch]
 ......
 x files changed, y insertions(+), z deletions(-)
 ```
@@ -461,7 +461,108 @@ x files changed, y insertions(+), z deletions(-)
   - fix it, then `add` and `commit`
 
 ---
-## Working with Remote
+## Working with Remotes
+* Code with others and share your codes on the Internet.
+* Remote repostiories are versions of your project that are hosted on the Internet or network somewhere.
+* Collaborating with others invlovles mananging these remote repositories and .pink[pushing] and .pink[pulling] data to and from them when you need to share work.
+
+.footnote[http://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes]
+---
+## Pushing Codes to Remote - Some Useful Combos
+* Create a new repository and push to remote
+```
+$ git init
+$ git add .
+$ git commit -m "first commit"
+$ git remote add origin [your_remote_git_repository_url]
+$ git push -u origin
+```
+* Push an existing repository
+```
+$ git remote add origin [your_remote_git_repository_url]
+$ git push -u origin master
+```
+---
+## Get Project Source from Remote Repo - git clone
+```
+$ git clone [your_remote_git_repository_url]
+```
+If you clone a repository, the command automatically adds that remote repository under the name .pink[origin].
+
+---
+## git remote
+* list all your remotes
+```
+$ git remote
+origin
+```
+* list all your remotes and shows the URLs that Git has stored for the shortname to be used when reading and writing to that remote.
+```
+$ git remote -v
+origin  https://github.com/schacon/ticgit (fetch)
+origin  https://github.com/schacon/ticgit (push)
+```
+* add remote repos
+```
+$ git add [shortname] [url]
+```
+you can use `[shortname]` on the command line instead of the whole URL.
+
+---
+## git remote (cont.)
+* remove/rename remote 
+```
+$ git remote rm [shortname]
+$ git remote rename [originalname] [newname]
+```
+* list remote branches
+```
+$ git branch -a
+  * master
+  remote/origin/HEAD -> origin/master
+  remote/origin/gh-pages
+```
+---
+## Fetching and Pulling From and Pushing to Your remotes
+* Download data
+```
+$ git fetch [remote-name]
+```
+`git fetch` commands only pulls the data to local repo - it doesn't automatically merge it with any of your work or modify what you're currently working on. You need to .pink[merge] it manually.<br>
+`git pull` would do `git fetch` and `git merge` for you.
+
+
+* Upload data
+```
+$ git push [remote-name] [branch-name]
+```
+---
+## Illustration
+```
+$ git clone janedoe@git.ourcompany.com:project.git
+```
+.img-80[
+![alt text](img/remote-branches-1.png)
+]
+---
+## Illustration (cont.)
+Some one push some changes to remote and you've done some work.
+```
+$ git fetch origin
+```
+.img-70[
+![alt text](img/remote-branches-3.png)
+]
+`git merge` and solve the conflict and then `git push` it back to remotes.
+---
+
+
+
+* https
+```
+git config --global credential.helper cache
+```
+* ssh
 
 
     </textarea>
