@@ -131,7 +131,14 @@
         font-size: 1.0em;
       }
 
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code, .remark-inline-code { 
+        font-family: 'Ubuntu Mono'; 
+        font-size: 80%; 
+      }
+      .MathJax{
+        margin-top: 1em;
+        display: inline-block;
+      }
     </style>
   </head>
   <body>
@@ -174,10 +181,14 @@ If a child could understand speakers' utterances, it would be easy to learn the 
 * Word learning take advantage of the fact that words often refer to the immediate environment of the speaker, which allows learners to build a lexicon based on consistent associations between words and their referents.
 * There are some existing models using methods such as connectionist, deductive, competition-based and probabilistic have had sucess in accounting for many phenomena in word learning.
 * Competition-based Model: The competition model uses a .pink[feature representation] of the referent, and determines the activation of a feature set (i.e., a referent) for each of the lexical choices based on the sum of the association of the individual features previously seen with each word. This strategy yields a .pink[mutual exclusivity] effect, and accounts for the reluctance to learn second labels. [1]
+
+.footnote[[1] Computational Modeling of Human Language Acquisition, Afra Alishahi]
+
+---
+## Cross-situational word learning (cont.)
 * However, speakers often talk about objects that are not visible and about actions that are not in progress at the moment of speech. (the .pink[displacement] feature of language.)
 * Cross-situational models treat the complex and variable communicative intentions of speakers as noise to be averaged out via repeated observation or minimized via the use of attentional cues, rather than as an important aspect of communication to be used in the learning task.
 
-.footnote[[1] Computational Modeling of Human Language Acquisition, Afra Alishahi]
 
 ---
 ## Design of the Model
@@ -201,20 +212,20 @@ If a child could understand speakers' utterances, it would be easy to learn the 
 ---
 ## Mathematics
 * The model defines a probability distribution over unobserved lexicons L and the observed corpus C of situations. Our goal is to infer the lexicon with the highest posterior prob- ability.We find this posterior probability using Bayes' rule:<br>
-.img-30[
-![alt text](img/15.png)]
+`$$P(L\mid C) \propto P(C\mid L)P(L)$$`
+
 * Making lexicons exponentially less probable as they included more word-object pairings and the equation becomes: 
-.img-30[
-![alt text](img/16.png)]
+`$$P(C\mid L) = \prod_{s\in C}P(W_s,O_s,I_s \mid L) $$`
 * The likelihood term captures .pink[the learner's assumptions] about the structure of the learning task. 
 
 ---
 ## Mathematics (cont.)
-* *W* and *O* are conditionaaly independent given *I*.
-* Since we can't directly observe the speaker's referential intention, we sum over all possible values of *I.small-font[s]* under the constraint that *I.small-font[s]* consists of *O*. (the relevant subset of possible intentions consists of those that refer to a subset of the objects in the physical context.)
-.img-60[
-![alt text](img/21.png)
-]
+* `\(W\)` and `\(O\)` are conditionaaly independent given `\(I\)`.
+* Since we can't directly observe the speaker's referential intention, we sum over all possible values of `\({I_s}\)` under the constraint that `\({I_s}\subseteq {O_s} \)`. (the relevant subset of possible intentions consists of those that refer to a subset of the objects in the physical context.)
+`$$P(C\mid L) = \prod_{s\in C} \sum_{{I_s \subseteq O_s }}  P(W_s \mid I_s, L) \cdot P(I_s \mid O_s) $$`
+* 
+---
+## Mathematics (cont.)
 * Finally, 
 .img-60[
 ![alt text](img/17.png)]
@@ -265,10 +276,24 @@ Questions or Comments :)
 
 
     </textarea>
-    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
-    </script>
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript"></script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
     <script type="text/javascript">
       var slideshow = remark.create();
+
+      // Setup MathJax
+      MathJax.Hub.Config({
+          tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          }
+      });
+      MathJax.Hub.Queue(function() {
+          $(MathJax.Hub.getAllJax()).map(function(index, elem) {
+              return(elem.SourceElement());
+          }).parent().addClass('has-jax');
+      });
+
+      MathJax.Hub.Configured();
     </script>
   </body>
 </html>
