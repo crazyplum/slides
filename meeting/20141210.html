@@ -220,25 +220,25 @@ If a child could understand speakers' utterances, it would be easy to learn the 
 
 ---
 ## Mathematics (cont.)
-* `\(W\)` and `\(O\)` are conditionaaly independent given `\(I\)`.
+* `\(W\)` and `\(O\)` are conditionaly independent given `\(I\)`.
 * Since we can't directly observe the speaker's referential intention, we sum over all possible values of `\({I_s}\)` under the constraint that `\({I_s}\subseteq {O_s} \)`. (the relevant subset of possible intentions consists of those that refer to a subset of the objects in the physical context.)
 `$$P(C\mid L) = \prod_{s\in C} \sum_{{I_s \subseteq O_s }}  P(W_s \mid I_s, L) \cdot P(I_s \mid O_s) $$`
-* 
+* For simplicity, set `\(P(I_s \mid O_s) \propto 1\)` so that all possible intentions are equally likely.
 ---
 ## Mathematics (cont.)
-* Finally, 
-.img-60[
-![alt text](img/17.png)]
-gamma is the probability that a word is used referentially in any given context.
-
+`$$ P(W_s \mid I_s, L) = \prod_{w \in W_s}\left[\gamma \cdot \sum_{o \in I_s} \frac{1}{|I_s|}P_R(w \mid o, L) + (1- \gamma) \cdot P_{NR}(w \mid L)\right] $$`
+* Assuming the words `\( \{w_1 ... w_n\} \)` in `\( W_s\)` are generated independently.<br>
+A word is uttered either .pink[referentially] `\(P_R\)` (to refer to an object in the speaker's intention set) or .pink[nonreferentially] `\(P_{NR}\)`.
+* `\(P_R\)` is the probability that the word is chosen uniformly from the set of words linked to that object in the lexicon. <br>
+`\(P_{NR}\)` is the probability of the words being picked from the full set of words observed in the corpus.
 
 ---
 ## Corpus Evaluation
 * Data Source: coded two video files (me06 and di03, each approximately 10 min long) from the Rollins section of the Child Language Data Exchange System (CHILDES)
 ![alt text](img/18.png)
 
-* The distinction between referential and nonreferential words al- lowed our model to exclude from the lexicon words that were used without a consistent referent
-* The ability of the model to infer an empty intention allowed it to discount utter- ances that did not contain references to any object in the im- mediate context.
+* The distinction between referential and nonreferential words allowed our model to exclude from the lexicon words that were used without a consistent referent.
+* The ability of the model to infer an empty intention allowed it to discount utterances that did not contain references to any object in the immediate context.
 
 ---
 ## Prediction of experimental results
