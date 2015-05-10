@@ -22,6 +22,10 @@
       li { line-height: 1.5em;
            font-size: 1.2em;
       }
+      li li{ line-height: 1.0em;
+            font-size: 1.0em;
+
+      }
 
       .red { color: #fa0000}
       .orange { color: #F59C25;}
@@ -107,7 +111,7 @@
 
 class: center, middle
 
-Applied Machine Learning -<br>Weka, Scikit-learn
+Applied Machine Learning - Weka
 ======================
 
 ---
@@ -139,6 +143,11 @@ their own command line interface.
 ## Exercise
 * Original dataset we use: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 * Please download the smaller dataset from ilms
+* We need to use libSVM in this exercise <br>
+Please download it from: http://www.csie.ntu.edu.tw/~cjlin/libsvm/#download<br>
+Copy the **libsvm.jar** to your weka directory
+* Open your terminal, `cd` to your weka folder and type <br>
+`java -classpath weka.jar:libsvm.jar weka.gui.GUIChooser`
 
 ---
 
@@ -148,11 +157,22 @@ their own command line interface.
 * Transfer plan **.txt** file into **.csv** with Excel or you could write codes to prepross the data.
 
 ---
-
-
+## Data Preprocessing - Filtering
+* To preprocess the data <br>
+ex. from numeric to nominal, to reduce the sample size
+* From numeric to nominal<br>
+Filter -> Choose -> Unsupervised -> attribute -> NumericToNominal -> left click to configure -> Apply
+* Resample<br>
+Filter -> Choose -> Supervised -> instance -> Resample
 
 ---
-java -Xmx128m -
+## Train your classifier
+* http://scikit-learn.org/stable/tutorial/machine_learning_map/
+
+---
+## Visualize
+* Use Visualize tabs to understand your data more.
+* Useful to find important features
 
 ---
 ## Useful Reference
