@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(http://fonts.googleapis.com/css?family=Inconsolata);
+      @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+      body { font-family: 'Open Sans Condensed'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+      }
+      .remark-slide-content h1 { font-size: 3.5em; }
+      .remark-slide-content h2 { font-size: 2.0em; }
+      h3 { font-size: 1.6em; }
+
+      li p { line-height : 1.5em; }
+      li { line-height: 1.5em;
+           font-size: 1.2em;
+      }
+
+      .red { color: #fa0000}
+      .orange { color: #F59C25;}
+      .green { color: rgb(55, 126, 39);}
+      .blue {color: #257FF5;}
+      .pink {color: rgb(244, 10, 97);}
+
+      .small-font{
+        font-size: 0.6em;
+        line-height: 0.4em;
+      }
+
+      .right-column{
+        width: 50%;
+        float: right;
+
+      }
+
+      .right-column li {
+        font-size: 1.2em;
+        line-height: 0.8em;
+        width:50%;
+        float: right;
+      }
+      .left-column{
+        width: 50%;
+        float: left;
+
+      }
+
+      img {
+        width: 100%;
+
+      }
+      .img-30{
+        display: block;
+        margin-top: 1em;
+        /*margin-right: auto;
+        margin-left: auto;*/
+       width: 30%;
+      }
+      .img-60{
+        display: block;
+        margin-top: 1em;
+        margin-right: auto;
+        margin-left: auto;
+        width: 60%;
+      }
+      .img-70{
+        display: block;
+        margin-top: 1em;
+        margin-right: auto;
+        margin-left: auto;
+        width: 70%;
+      }
+      .img-80{
+        display: block;
+        margin-top: 1em;
+        margin-right: auto;
+        margin-left: auto;
+        width: 80%;
+      }
+
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #F4F4F4;
+        border-radius: 5px;
+      }
+
+      .footnote{
+        position: absolute;
+        bottom: 1em;
+        color: black;
+        font-size: 0.6em;
+      }
+      .test{ margin-top: -1.2em;}
+      #.remark-code, .remark-inline-code { font-family: 'Inconsolata'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+Applied Machine Learning -<br>Weka, Scikit-learn
+======================
+
+---
+
+## Download Weka
+* http://www.cs.waikato.ac.nz/ml/weka/downloading.html
+* Choose the one fit your need! <br> If you don't have java RE installed in your computer, choose the one with java RE.
+
+---
+## Weka Interface
+
+.img-80[
+![Alt text](img/weka_interface.png)
+]
+
+---
+
+## Weka Interface (cont.)
+* Explorer: An environment for exploring data with WEKA
+* Experimenter: An environment for performing experiments and conducting statistical tests between learning schemes.
+* KnowledgeFlow: This environment supports essentially the same functions as the Explorer but with a drag-and-drop interface. One advantage
+is that it supports incremental learning.
+* SimpleCLI: Provides a simple command-line interface that allows direct
+execution of WEKA commands for operating systems that do not provide
+their own command line interface.
+* You could explore more feature in the official manual and official documentation.
+---
+
+## Exercise
+* Original dataset we use: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+* Please download the smaller dataset from ilms
+
+---
+
+## Exploring the Data
+* Input data format: **.arff** is the best data format for Weka
+* You could try **.csv**, but errors may occur.
+* Transfer plan **.txt** file into **.csv** with Excel or you could write codes to prepross the data.
+
+---
+
+
+
+---
+java -Xmx128m -
+
+---
+## Useful Reference
+* http://git-scm.com/book/en/v2/
+
+
+
+    </textarea>
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+          highlightStyle: 'arta',
+          highlightLanguage: 'bash'
+        });
+    </script>
+  </body>
+</html>
