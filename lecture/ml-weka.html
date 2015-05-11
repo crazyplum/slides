@@ -100,7 +100,7 @@
         position: absolute;
         bottom: 1em;
         color: black;
-        font-size: 0.6em;
+        font-size: 0.8em;
       }
       .test{ margin-top: -1.2em;}
       #.remark-code, .remark-inline-code { font-family: 'Inconsolata'; }
@@ -145,9 +145,26 @@ their own command line interface.
 * Please download the smaller dataset from ilms
 * We need to use libSVM in this exercise <br>
 Please download it from: http://www.csie.ntu.edu.tw/~cjlin/libsvm/#download<br>
-Copy the **libsvm.jar** to your weka directory
-* Open your terminal, `cd` to your weka folder and type <br>
+* Copy the **libsvm.jar** to your weka director <br>
+Open your terminal, `cd` to your weka folder and type <br>
 `java -classpath weka.jar:libsvm.jar weka.gui.GUIChooser`
+
+---
+## Add `libsvm.jar` into Weka (Mac)
+* More easier way: <br>
+Copy **libsvm.jar** and put it in Contents/Resources/Java/ <br>
+Open the **Info.plist** and add `<string>$JAVAROOT/libsvm.jar</string>` to the `ClassPath` attribute.
+
+.footnote[http://www.zhangzhibo.net/2013/08/28/install-wake-under-mac-os/ ]
+
+---
+## Add `libsvm.jar` into Weka (Windows)
+* Start->Control Panel->System->Advanced System Settings->Environment Variables
+* Select CLASSPATH under System Variables and click Edit...
+* Add a semicolon to the end followed by the full path of libsvm.jar
+* Restart Weka and, everything else being OK, it will work.
+
+.footnote[http://stackoverflow.com/questions/16714988/where-is-classpath-for-windows-7-java-weka]
 
 ---
 
