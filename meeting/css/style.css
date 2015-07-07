@@ -95,4 +95,12 @@ img{
   font-size: 1.0em;
 }
 
+.footnote{
+  font-family: 'Open Sans Condensed';
+  position: absolute;
+  bottom:1.0em;
+  color: #474747;
+  font-size: 0.8em;
+}
+
 .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
