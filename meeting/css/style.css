@@ -28,6 +28,11 @@ img{
 
 }
 
+li li {
+    font-size: 1.0em;
+
+}
+
 .red { color: #fa0000}
 .orange { color: #F59C25;}
 .green { color: rgb(55, 126, 39);}
