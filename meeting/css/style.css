@@ -105,7 +105,9 @@ li li {
   position: absolute;
   bottom:1.0em;
   color: #474747;
-  font-size: 0.8em;
+  font-size: 0.7em;
+  line-height: normal;
+  padding-right: 80px;
 }
 
 .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
