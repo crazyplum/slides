@@ -43,13 +43,15 @@ li li {
 .pink {color: rgb(244, 10, 97);}
 .gray {color: gray;}
 .small-font{
-  font-size: 0.6em;
+  font-size: 0.8em;
   line-height: 0.4em;
 }
 
 .right-column{
   width: 50%;
   float: right;
+  font-size: 0.8em;
+  line-height: 1.2em;
 
 }
 
@@ -61,6 +63,8 @@ li li {
 .left-column{
   width: 50%;
   float: left;
+  font-size: 0.8em;
+  line-height: 1.2em;
 }
 .img-adjust{
   width: 2em;
