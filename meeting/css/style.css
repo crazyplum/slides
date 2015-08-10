@@ -33,7 +33,14 @@ img{
 
 li li {
     font-size: 1.0em;
+}
 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td {
+  text-align: center;
 }
 
 .red { color: #fa0000}
