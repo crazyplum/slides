@@ -12,26 +12,37 @@ What we got so far<br> (ര̀ᴗര́)و ̑̑
 ===============
 ---
 ## Results we got - significance
-* Workload
-* Group Communication quality - Clarity
-* Group Communication quality - Comfort
+* Workload (Condition*Type: t(31) = 2.05, p = 0.049), NS increased workload while NNS decreased workload.
+* Group Communication quality - Clarity (Condition: t(31) = -2.51, p = 0.0174), improved NNS much more.
+* Group Communication quality - Comfort (Condition*Type: t(31) = -2.03, p = 0.0514)
 * Delete the group with low highlighting function usage (the lowest quartile)
 * highlighting function usage: <br>
 `$$\begin{align}&= \frac{highlighted \ once \times 1 + highlighted\ twice \times 2}{all \ ASR\ sentences} \\ &= \frac{annotations\ made\ by\ NS}{all\ ASR\ sentences}\end{align}$$`
 ---
 ## Number of commonalities
-* There is no any differences between two conditions.
+* There is no any differences between two conditions.<br>
+(NNS: 8.21(B) vs 8.71(H); NNS: 14.6(B) vs  14.3(H))
 * Need to calculate percentage of answers they wrote down.<br>
 (because they may find out quite different common things with different task topic)
 * Union the answers of two stages (memorized + checked transcript)<br>
 -> pretend to be the correct answers?
 ---
-## From the interview
+## From the interview (NS)
+* Mostly they highlighted for NNS > self.
+* Some felt highlighting distracting, while others felt it helpful.
+* Few (three) native speakers reported that they changed their way of speaking because they want to highlight the sentences they said.
+* Some said ASR errors affected their decision process while highlighting, while some said they didn't notice errors at all.<br>
+-> Perhaps depends on the ASR accuracy.
+* Some felt burden because they tried to think up ideas and highlighting at the same time.
+
 
 ---
-## Next step
+## Next step?
 * correct answer of each group in each task
+* analyze the answers they wrote down: confilct, agreement .. etc.
 * WER
+
+
 ---
 class: center, middle
 
@@ -50,7 +61,8 @@ Questions or Comments :)
       MathJax.Hub.Config({
           tex2jax: {
           skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-          }
+          },
+          "HTML-CSS":{scale:75}
       });
       MathJax.Hub.Queue(function() {
           $(MathJax.Hub.getAllJax()).map(function(index, elem) {
