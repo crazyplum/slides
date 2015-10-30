@@ -83,6 +83,13 @@ td {
   display: inline-block;
   vertical-align: middle;
 }
+.img-45{
+  display: block;
+  margin-top: 1em;
+  margin-right: auto;
+  margin-left: auto;
+  width: 45%;
+}
 .img-60{
   display: block;
   margin-top: 1em;
